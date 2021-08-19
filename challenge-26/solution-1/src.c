@@ -10,26 +10,25 @@ int main(int argc, char const *argv[])
 * make each element appear just once.
 *
 */
-	int removeDuplicates(int* nums, int numsSize)
-{
-	
-	
-	for (int i = 0; i < numsSize; ++i)
+int removeDuplicates(int* nums, int numsSize){
+	if (numsSize == 0)
+		return 0;
+
+    int fast = 1,slow = 1;
+	while ( fast < numsSize )
 	{
-		for (int j = i + 1 ; j < numsSize; ++j)
-		{
-			if nums[j] == nums[i];
-			b
-		}
-		/* code */
+   		if (nums[fast] != nums[fast-1]) {
+   			nums[slow] = nums[fast];
+   			++slow;
+   		}
+   		++fast;
+   	}
+	return slow;  
 	}
-
-
-}
 
     // Test codes
     int nums[] = {0,0,1,1,1,2,2,3,3,4};
-    printf("%d\n",removeDuplicates(nums,sizeof(nums)) );	
+    printf("%d\n",removeDuplicates(nums,10) );	
 
 	return 0;
 }

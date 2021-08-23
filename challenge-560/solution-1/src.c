@@ -27,13 +27,13 @@ int subarraySum(int* nums, int numsSize, int k){
 	for( start = 0; start < numsSize; ++start )
 	{
 		int sum = 0;
-		for ( end = start; end < numsSize; )
+		for ( end = start; end < numsSize; end++ )
 		{
 			sum += nums[end];
 			printf("%d\n",sum );
 			if ( sum == k )
 				++count;
-			++end;
+
 		}
 
 	}
